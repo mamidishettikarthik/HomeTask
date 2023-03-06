@@ -1,6 +1,13 @@
 window.onload = function () {
     var maxResults=15;
     var API_KEY = "AIzaSyDJijpMHa4XIPhhUPikeKv7iAuB0EB8USA";
+    var videoData;
+    var thumbnailsObject = [];
+    var videoIdsObject = [];
+    var descriptionObject = [];
+    var titlesObject = [];
+    var authorsObject = [];
+    var publishedDateObject = [];
     window.onresize = () => { 
         applyPagination();
     };
@@ -9,7 +16,7 @@ window.onload = function () {
         var topic = document.getElementById("search").value;
         videoSearch(API_KEY, topic, maxResults)
     });
-    var videoData;
+    
     function videoSearch(API_KEY, topic, maxResults) {
         fetch("https://www.googleapis.com/youtube/v3/search?key=" +API_KEY
             + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" + topic)
@@ -28,7 +35,7 @@ window.onload = function () {
         function Pagination(){
             const prevButton=document.getElementById('button_prev');
             const nextButton=document.getElementById('button_next');
-            const clickPageNumber=document.querySelectorAll('.clickPageNumber');
+            const click-page=document.querySelectorAll('.click-page');
             let current_page=1;
             var records;
             if (screen.width>=1100) {
@@ -55,7 +62,7 @@ window.onload = function () {
                 nextButton.addEventListener('click', nextPage);
             }
             let selectedPage=function(){
-                let page_number=document.getElementById('page_number').getElementsByClassName('clickPageNumber');
+                let page_number=document.getElementById('page-number').getElementsByClassName('click-page');
                 for(let i=0;i<page_number.length;i++){
                     if(i==current_page-1){
                         page_number[i].style.opacity= "1.0";
@@ -69,12 +76,6 @@ window.onload = function () {
                 current_page==1 ? prevButton.classList.add('opacity') : prevButton.classList.rem('opacity');
                 current_page==numPages() ? nextButton.classList.add('opacity') : nextButton.classList.remove('opacity');
             }
-            var thumbnailsObject = [];
-            var videoIdsObject = [];
-            var descriptionObject = [];
-            var titlesObject = [];
-            var authorsObject = [];
-            var publishedDateObject = [];
             videoData.items.forEach((item) => {
                 let thumbnail = item.snippet.thumbnails.medium.url;
                 thumbnailsObject.push(thumbnail);
@@ -97,7 +98,7 @@ window.onload = function () {
                     page = numPages();
                 }
                 document.getElementById('videos').innerHTML = "";
-                document.getElementById('videoDetails').innerHTML = "";
+                document.getElementById('video-Details').innerHTML = "";
                 for (var i = (page - 1)* records; i < (page * records) && i < maxResults; i++) {
                     img = `<img src="${thumbnailsObject[i]}" alt="Thumbnail" width=250px height=150px>`
                     document.getElementById("videos").innerHTML += img;
@@ -110,7 +111,7 @@ window.onload = function () {
                                        <b>Published Date : -</b> ${publishedDateObject[i]} <br>
                                        <b>Description : -</b> ${descriptionObject[i]} <br>
                                       </p>`
-                    document.getElementById("videoDetails").appendChild(videoDetailsDiv);
+                    document.getElementById("video-details").appendChild(videoDetailsDiv);
                 }
                 checkButtonOpacity();
                 selectedPage();
@@ -129,7 +130,7 @@ window.onload = function () {
             }
             let clickPage=function(){
                 document.addEventListener('click', function (e) {
-                    if (e.target.nodeName == "SPAN" && e.target.classList.contains("clickPageNumber")){
+                    if (e.target.nodeName == "SPAN" && e.target.classList.contains("click-page")){
                         current_page = e.target.textContent;
                         changePage(current_page);
                     }
@@ -140,7 +141,7 @@ window.onload = function () {
                 pageNumber.innerHTML = "";
 
                 for (let i=1;i<numPages()+1;i++) {
-                    pageNumber.innerHTML += "<span class='clickPageNumber'>" + i + "</span>";
+                    pageNumber.innerHTML += "<span class='click-page'>" + i + "</span>";
                 }
             }
             let numPages=function(){
