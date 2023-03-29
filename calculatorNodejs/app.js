@@ -65,7 +65,7 @@ function Execute() {
                 break;
             }
         default:
-            console.log("Invalid arguments");
+            console.log("Invalid Operations");
     }
 }
 
