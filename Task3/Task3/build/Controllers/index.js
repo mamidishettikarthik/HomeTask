@@ -30,11 +30,11 @@ var createUser = function createUser(req, res) {
     value = _validateSchema.value;
   if (error) {
     console.log(error);
-    res.status(400).json(error.details);
+    res.status(400).json({error: error.details});
   }
   try {
     users.push(userData);
-    return res.status(200).json(value);
+    return res.status(201).json(value);
   } catch (e) {
     return res.status(500).json({'message':'Error'});
   }
@@ -56,7 +56,7 @@ var updateUser = function updateUser(req, res) {
         value = _validateSchema2.value;
       if (error) {
         console.log(error);
-        return res.status(500).json(error.details);
+        return res.status(400).json({error:error.details});
       }
       return res.status(200).json(value);
     }
@@ -64,7 +64,7 @@ var updateUser = function updateUser(req, res) {
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(400).json({'message':'Error'})
+    return res.status(500).json({'message':'Error'})
   }
 };
 var autoSuggestUsers = function autoSuggestUsers(req, res) {
@@ -85,7 +85,7 @@ var autoSuggestUsers = function autoSuggestUsers(req, res) {
     matchedUsers.sort(compare);
     return res.status(200).json(matchedUsers.slice(0, limit));
   } catch (error) {
-    return res.status(400).json({'message':'Error'})
+    return res.status(500).json({'message':'Error'})
   }
 };
 function compare(a, b) {
@@ -107,7 +107,7 @@ var deleteUser = function deleteUser(req, res) {
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(400).json({'message':'Error'})
+    return res.status(500).json(message: error?.message || "Error"})
   }
 };
 module.exports = {
