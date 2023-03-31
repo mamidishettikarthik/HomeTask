@@ -11,10 +11,6 @@ app.use(express.json());
 
 app.use('/user',userService);
 
-app.get("/",function(req,res){
-    res.send("Hello World");
-});
-
 sequelize.sync().then(function(){
     console.log("Synced db.");
 }).catch(function(err){
