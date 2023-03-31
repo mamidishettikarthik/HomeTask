@@ -78,7 +78,7 @@ var autoSuggestUsers = function autoSuggestUsers(req, res) {
       }
     });
     if (matchedUsers.length === 0) {
-      return res.status(400).json({
+      return res.status(404).json({
         'message': 'No users matching the substring'
       });
     }
@@ -103,7 +103,7 @@ var deleteUser = function deleteUser(req, res) {
       user.isDeleted = true;
       return res.status(200).json('Deleted Successfully');
     }
-    return res.status(400).json({
+    return res.status(404).json({
       'message': 'User does not exist'
     });
   } catch (error) {
