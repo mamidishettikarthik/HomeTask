@@ -14,7 +14,7 @@ var findUser = function findUser(req, res) {
     if (currUser) {
       return res.status(200).json(currUser);
     }
-    return res.status(500).json({
+    return res.status(404).json({
       'message': 'User does not exist'
     });
   } catch (error) {
@@ -60,7 +60,7 @@ var updateUser = function updateUser(req, res) {
       }
       return res.status(200).json(value);
     }
-    return res.status(500).json({
+    return res.status(404).json({
       'message': 'User does not exist'
     });
   } catch (error) {
