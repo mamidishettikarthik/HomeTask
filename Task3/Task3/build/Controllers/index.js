@@ -14,11 +14,11 @@ var findUser = function findUser(req, res) {
     if (currUser) {
       return res.status(200).json(currUser);
     }
-    return res.status(400).json({
+    return res.status(500).json({
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(500).json(error);
   }
 };
 var createUser = function createUser(req, res) {
@@ -30,13 +30,13 @@ var createUser = function createUser(req, res) {
     value = _validateSchema.value;
   if (error) {
     console.log(error);
-    res.status(400).json(error.details);
+    res.status(500).json(error.details);
   }
   try {
     users.push(userData);
     return res.status(200).json(value);
   } catch (e) {
-    return res.status(400).json(error);
+    return res.status(500).json(error);
   }
 };
 var updateUser = function updateUser(req, res) {
