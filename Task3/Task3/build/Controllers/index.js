@@ -101,7 +101,7 @@ var deleteUser = function deleteUser(req, res) {
     });
     if (user) {
       user.isDeleted = true;
-      return res.status(200).json({'message':'Deleted Successfully');
+      return res.status(200).json({'message':'Deleted Successfully'});
     }
     return res.status(404).json({
       'message': 'User does not exist'
