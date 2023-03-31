@@ -23,7 +23,7 @@
 .pagination-block span {
   display: inline-block;
 }
-.pagination-block .page-Button {
+.pagination-block .page-button {
   background-color:#FF0000;
   color: white;
   border-radius: 5px;
