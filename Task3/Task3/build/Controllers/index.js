@@ -56,7 +56,7 @@ var updateUser = function updateUser(req, res) {
         value = _validateSchema2.value;
       if (error) {
         console.log(error);
-        return res.status(500).json({'message':'error.details');
+        return res.status(500).json(error.details);
       }
       return res.status(200).json(value);
     }
