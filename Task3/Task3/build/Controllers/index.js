@@ -18,7 +18,7 @@ var findUser = function findUser(req, res) {
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(500).json(error);
+    return res.status(500).json({'message':'Error'});
   }
 };
 var createUser = function createUser(req, res) {
@@ -36,7 +36,7 @@ var createUser = function createUser(req, res) {
     users.push(userData);
     return res.status(200).json(value);
   } catch (e) {
-    return res.status(500).json(error);
+    return res.status(500).json({'message':'Error'});
   }
 };
 var updateUser = function updateUser(req, res) {
@@ -56,7 +56,7 @@ var updateUser = function updateUser(req, res) {
         value = _validateSchema2.value;
       if (error) {
         console.log(error);
-        return res.status(500).json(error.details);
+        return res.status(500).json({'message':'error.details');
       }
       return res.status(200).json(value);
     }
@@ -64,7 +64,7 @@ var updateUser = function updateUser(req, res) {
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(400).json({'message':'Error'})
   }
 };
 var autoSuggestUsers = function autoSuggestUsers(req, res) {
@@ -85,7 +85,7 @@ var autoSuggestUsers = function autoSuggestUsers(req, res) {
     matchedUsers.sort(compare);
     return res.status(200).json(matchedUsers.slice(0, limit));
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(400).json({'message':'Error'})
   }
 };
 function compare(a, b) {
@@ -101,13 +101,13 @@ var deleteUser = function deleteUser(req, res) {
     });
     if (user) {
       user.isDeleted = true;
-      return res.status(200).json('Deleted Successfully');
+      return res.status(200).json({'message':'Deleted Successfully');
     }
     return res.status(404).json({
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(400).json(error);
+    return res.status(400).json({'message':'Error'})
   }
 };
 module.exports = {
