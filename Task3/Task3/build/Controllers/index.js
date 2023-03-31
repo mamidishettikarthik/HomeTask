@@ -24,7 +24,7 @@ var findUser = function findUser(req, res) {
 var createUser = function createUser(req, res) {
   var userData = req.body;
   userData.id = uuidv4();
-  // Perform validation of req.body data
+  
   var _validateSchema = validateSchema(userData),
     error = _validateSchema.error,
     value = _validateSchema.value;
