@@ -8,9 +8,12 @@ window.onload = function () {
     var titlesObject = [];
     var authorsObject = [];
     var publishedDateObject = [];
+    const targetDiv =document.getElementById("pagination-block");
+    const btn =document.getElementById("search-btn");
     window.onresize = () => { 
         applyPagination();
     };
+    
     document.getElementById("myForm").addEventListener("submit",function(e){
         e.preventDefault()
         var topic = document.getElementById("search").value;
@@ -151,8 +154,6 @@ window.onload = function () {
         let pagination=new Pagination();
         pagination.init();
     }
-    const targetDiv =document.getElementById("pagination-block");
-    const btn =document.getElementById("search-btn");
     btn.onclick =function() {
         targetDiv.style.display = "inline-block";
     }
