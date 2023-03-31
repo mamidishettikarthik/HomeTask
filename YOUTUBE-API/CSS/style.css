@@ -123,7 +123,7 @@ form.example::after {
   margin-right: 5px;
   margin-top: 10px;
 }
-#vid-details p b {
+#vid-details page{
   font-size: 15px;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 800;
@@ -133,7 +133,7 @@ b:hover{
   text-decoration: dashed;
   color:#FF0000;
 }
-#vid-details p {
+#vid-details page{
   font-size: 13px;
 }
 @media screen and (max-width: 850px) {
