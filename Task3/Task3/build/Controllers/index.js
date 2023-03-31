@@ -30,7 +30,7 @@ var createUser = function createUser(req, res) {
     value = _validateSchema.value;
   if (error) {
     console.log(error);
-    res.status(500).json(error.details);
+    res.status(400).json(error.details);
   }
   try {
     users.push(userData);
