@@ -8,7 +8,7 @@ async function findOne(req,res){
         if(user && !user.isDeleted){
             return res.status(200).json(user);
         }else{
-            return res.status(500).json({"message":"User does not exist"});
+            return res.status(404).json({"message":"User does not exist"});
         }
     } catch (error) {
         return res.status(500).json({"message":"Error in finding user"})
@@ -21,7 +21,7 @@ async function createUser(req,res){
     const { error } = validateSchema(userData);
     if (error) {
         console.log(error);
-        res.status(400).json(error.details);
+        res.status(500).json({error:error.details});
         return;
     }
     try {
@@ -46,7 +46,7 @@ async function updateUser(req,res){
             return res.status(200).json(user);
         }
         else{
-            return res.status(500).json({"message":"User does not exist"});
+            return res.status(404).json({"message":"User does not exist"});
         }
     } catch (error) {
         return res.status(500).json({"message":"Error in updating user"})
@@ -63,7 +63,7 @@ async function deleteUser(req,res){
             await user.save();
             return res.status(200).json({"message":"User Deleted successfully."});
         }else{
-            return res.status(500).json({"message":"User does not exist"});
+            return res.status(404).json({"message":"User does not exist"});
         }
     } catch (error) {
         return res.status(500).json({"message":"Error in deleting user"})
@@ -78,7 +78,7 @@ async function getAutoSuggestUsers(req,res){
         if(users){
             return res.status(200).json(users);
         }else{
-            return res.status(500).json({"message":"Users does not exist"});
+            return res.status(404).json({"message":"Users does not exist"});
         }
     } catch (error) {
         return res.status(500).json({"message":"Error in retreiving auto suggestions"})
