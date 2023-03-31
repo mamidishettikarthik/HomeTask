@@ -107,7 +107,7 @@ var deleteUser = function deleteUser(req, res) {
       'message': 'User does not exist'
     });
   } catch (error) {
-    return res.status(500).json(message: error?.message || "Error"})
+    return res.status(500).json({message: error?.message || "Error"})
   }
 };
 module.exports = {
