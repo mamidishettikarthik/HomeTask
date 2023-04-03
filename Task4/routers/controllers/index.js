@@ -28,7 +28,7 @@ async function createUser(req,res){
         const newUser = await services.createUser(userData);
         return res.status(200).json(newUser);
     } catch (error) {
-        return res.status(500).json(error.errors[0].message);
+        return res.status(500).json({erroe:error.errors[0].message});
     }
 }
 
@@ -66,7 +66,7 @@ async function deleteUser(req,res){
             return res.status(404).json({"message":"User does not exist"});
         }
     } catch (error) {
-        return res.status(500).json({"message":"Error in deleting user"})
+        return res.status(500).json({"message":"Error in deleting user"});
     }
 }
 
