@@ -1,7 +1,7 @@
 describe("Youtube Api Testing", function () {
   
     it("API result length is as expected", function () {
-      return getResponse("Epam").then(function (result) {
+      return getResponse("Equal").then(function (result) {
         expect(result.length).toEqual(50);
       });
     });
