@@ -66,50 +66,8 @@ flex: 1 100%;
 transition: 0.4s ease-out;
 }
 
-/* .detail {
-margin: 3rem 5rem;
-overflow-y: scroll;
-}
-
-.detail .content .rating {
-margin-left: 2rem;
-font-size: 1.5rem;
-margin-bottom: 0;
-margin-top: 1rem;
-padding-bottom: 0;
-} */
-
-
-
-/* .detail .content span {
-font-size: 1.4rem;
-margin-left: 2rem;
-margin-bottom: 3rem;
-font-weight: 300;
-color: #ffffff;
-}
-
-.detail .content .rating {
-margin-bottom: 30px;
-} */
-
-/* .detail .content .about {
-display: flex;
-flex-wrap: wrap;
-margin: 0 -15px 30px;
-} */
-
-/* .detail .content .about img {
-flex: 1 1 50%;
-max-width: 300px;
-opacity: none;
-padding: 0 15px;
-margin-left: 2rem;
-margin-top: 1rem;
-} */
-
 @media screen and (max-width: 643px) {
 .results .result {
 	margin: 15px;
-}
+	}
 }
