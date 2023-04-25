@@ -98,7 +98,7 @@ const deleteUser = (req, res) => {
         }
         return res.status(404).json({ 'message':'User does not exist' });
     } catch (error) {
-        return res.status(500).json({ message: error?.message || 'Error' });
+        return res.status(500).json({  'message':'Error' });
     }
 };
 
