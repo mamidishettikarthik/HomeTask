@@ -28,7 +28,7 @@ const createUser = (req, res) => {
     }
     try {
         users.push(userData);
-        return res.status(200).json(value);
+        return res.status(201).json(value);
     } catch (e) {
         return res.status(500).json({ 'message':'Error' });
     }
