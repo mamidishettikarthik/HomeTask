@@ -25,6 +25,7 @@ function prevPage(currentPage) {
         return error;
     }
 }
+
 function nextPage(currentPage) {
     if (currentPage < toNumPage(100)) {
         currentPage++;
