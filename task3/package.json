@@ -8,7 +8,7 @@
     "clean": "rimraf build && mkdir build",
     "dev": "nodemon ./src/app.js",
     "build": "npm run clean && babel Routes validator Routes/Controllers --out-dir build",
-    "eslint": "npx eslint ./build/Routes/src/validator/*",
+    "eslint": "npx eslint ./build/Routes/Controllers/src/validator/*",
     "lint:fix": "npx eslint --fix"
   },
   "keywords": [],
