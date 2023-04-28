@@ -1,5 +1,4 @@
 "use strict";
-
 var _require = require('sequelize'),
   DataTypes = _require.DataTypes;
 var sequelize = require('../data-access/database.js');
