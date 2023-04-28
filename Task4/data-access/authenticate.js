@@ -8,5 +8,4 @@ const authenticate=async function(){
         console.error('Unable to connect to the database:', error);
       }
 }
-
 module.exports=authenticate;
