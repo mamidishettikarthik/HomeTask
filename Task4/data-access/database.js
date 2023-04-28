@@ -1,5 +1,4 @@
 const dbConfig=require('../config/config.js');
-
 const Sequelize=require('sequelize');
 
 const sequelize=new Sequelize(
@@ -18,5 +17,4 @@ const sequelize=new Sequelize(
         }
     }
 );
-
 module.exports=sequelize;
