@@ -1,5 +1,4 @@
 "use strict";
-
 var express = require('express');
 var authenticate = require('./data-access/authenticate.js');
 var sequelize = require('./data-access/database.js');
