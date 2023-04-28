@@ -21,7 +21,7 @@ describe("Youtube Api Testing", function () {
     expect(res).toBe(24);
   });
 
-  it("expected a positive value is working", () => {
+  it("expect a positive value is working as expected ", () => {
     const res = prevPage(-1);
     expect(res).toEqual(jasmine.any(Error));
   });
