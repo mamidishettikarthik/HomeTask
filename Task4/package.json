@@ -8,7 +8,7 @@
     "clean": "rimraf build && mkdir build",
     "dev": "nodemon ./app.js",
     "build": "npm run clean && babel config data-access models routers routers/controllers services app.js --out-dir build",
-    "eslint": "npx eslint ./build/*",
+    "eslint": "npx eslint ./build/config/controllers/models/routers/services/app/*",
     "lint:fix": "npx eslint --fix"
   },
   "keywords": [],
