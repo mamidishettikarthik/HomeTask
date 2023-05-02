@@ -15,7 +15,6 @@ const createUser = (userData) => {
 const findUserById = (userId) => {
     return User.findByPk(userId);
 }
-
 const findAllUsers = (subString, limit) => {
     return User.findAll({
         where: {
