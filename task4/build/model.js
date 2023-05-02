@@ -1,7 +1,7 @@
 "use strict";
 
 var _require = require('sequelize'),
-  DataTypes = _require.DataTypes;
+DataTypes = _require.DataTypes;
 var sequelize = require('../data-access/db.con.js');
 var User = sequelize.define("users", {
   id: {
