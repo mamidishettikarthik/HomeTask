@@ -30,6 +30,7 @@ var findAllUsers = function findAllUsers(subString, limit) {
     limit: limit
   });
 };
+
 module.exports = {
   createUser: createUser,
   findUserById: findUserById,
