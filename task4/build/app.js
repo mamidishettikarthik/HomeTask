@@ -17,6 +17,7 @@ sequelize.sync().then(function () {
 })["catch"](function (err) {
   console.log("Failed to sync db : ", err.message);
 });
+
 app.listen(PORT, function () {
   authenticate().then(function () {
     return console.log("Listening on http://localhost:" + PORT);
