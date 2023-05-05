@@ -1,5 +1,5 @@
 const {DataTypes}=require('sequelize');
-const sequelize=require('../data-access/database.js');
+const sequelize=require('../data-access/db.cog.js');
 
 const User = sequelize.define("users",{
     id:{
