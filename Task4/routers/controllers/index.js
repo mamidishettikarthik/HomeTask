@@ -26,7 +26,7 @@ async function createUser(req,res){
     }
     try {
         const newUser = await services.createUser(userData);
-        return res.status(200).json(newUser);
+        return res.status(201).json(newUser);
     } catch (error) {
         return res.status(500).json({erroe:error.errors[0].message});
     }
