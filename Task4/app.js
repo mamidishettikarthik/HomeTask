@@ -1,8 +1,8 @@
 const express=require('express');
 const authenticate=require('./data-access/authenticate.js');
-const sequelize=require('./data-access/database.js');
+const sequelize = require('./data-access/db.con.js');
 const userService=require('./routers/user.routes.js');
-require('./models/model.js');
+require('./models/users.js');
 
 const app=express();
 const PORT=8080;
